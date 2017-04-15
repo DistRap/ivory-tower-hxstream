@@ -1,0 +1,32 @@
+name:                ivory-tower-hxstream
+version:             0.1.0.0
+synopsis:            HX stream libraray
+-- description:
+license:             BSD3
+author:              Galois, Inc.
+maintainer:          srk@48.io
+-- category:
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     HXStream.Native,
+                       HXStream.Ivory,
+                       HXStream.Ivory.Types,
+                       HXStream.Tower
+
+  build-depends:       base >= 4.6,
+                       bytestring,
+                       dlist,
+                       monadLib,
+                       ivory,
+                       ivory-stdlib,
+                       ivory-serialize,
+                       ivory-hw,
+                       tower              >= 0.9,
+                       tower-config,
+                       tower-hal
+
+  default-language:    Haskell2010
+  ghc-options:         -Wall
