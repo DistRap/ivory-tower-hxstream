@@ -126,7 +126,7 @@ hxstreamDecodeTower n serial_chan buflen handlers = do
         let needed = packSize handlerPackRep * 2 + 3
         e <- if needed <= arrayLen buf
           then emitter handlerChan 1
-          else fail $
+          else error $
             "handler needs buffer length at least " ++ show needed ++
             " but was only given " ++ show (arrayLen buf :: Int) ++ " bytes"
 
